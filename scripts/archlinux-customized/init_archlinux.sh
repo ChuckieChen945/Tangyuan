@@ -88,3 +88,73 @@ main() {
 }
 
 main "$@"
+
+# 以下内容待整理：
+
+
+# TODO:解决wsl 控制台中无法按住ctrl左右移动光标的问题
+
+# TODO:让将以下代码可以直接通过wsl命令在powershell中执行
+##################################以下代码需要进入linux中执行######################################
+
+# 太久没更新导致unknown trust可将/etc/pacman.conf中SigLevel = Never
+# 更新keyring
+sudo pacman -S archlinux-keyring
+
+# 测速并启用国内源
+pacman -S reflector
+sudo reflector --sort rate --threads 100 -c China --save /etc/pacman.d/mirrorlist
+
+# 安装base-devel。注意，fakeroot包不支持wsl系统，在弹出提示后记得选n
+# TODO:自动选择
+pacman -S base-devel
+
+# 更新系统
+pacman -Syu
+# 添加用户
+useradd -m -G wheel chuckie
+
+# 将wheel组设为sudo的超级用户
+sed -i '1i\## allow members of group wheel to execute any command without a password' /etc/sudoers
+sed -i '2i\%wheel ALL=(ALL:ALL) NOPASSWD:ALL' /etc/sudoers
+sed -i '3i\\n' /etc/sudoers
+
+su chuckie
+
+# # pwsh对archlinux的支持不好，暂不使用
+# # 安装powershell
+# # TODO:指定clone的目录
+# git clone https://aur.archlinux.org/powershell-bin.git
+# cd powershell-bin/
+# # 使用fastgit加速
+# # 用fastgit下载的文件大小与github下载的文件大小不一至，暂不知道为什么。谨慎使用fastgit
+# # sed -i 's/github.com/download.fastgit.org/g' PKGBUILD
+# # TODO:自动确认
+# makepkg -si
+# # 配置默认交互shell为powershell
+# echo 'exec pwsh -nologo' > /home/chuckie/.bashrc
+
+# 安装YAY
+pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+
+# 安装starship主题
+pacman -S starship
+# 启用starship
+New-Item $PROFILE.CurrentUserCurrentHost -ItemType File -Force
+echo "Invoke-Expression (&starship init powershell)" >> (pwsh -command '$profile.CurrentUserCurrentHost')
+
+# TODO:删除clone下来的安装文件
+
+# 用于支持pycharm wsl功能, python包已默认安装
+pacman -S rsync
+pacman -S python-pip
+# 为pip更换国内源
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 为VSCode Remote Python提供code formatting
+pip install -U autopep8
+sudo pacman -Syu net-tools #ifconfig 等命令
+##################################以上代码需要进入linux中执行######################################
+
+arch config --default-user chuckie
+# 下载常用包
