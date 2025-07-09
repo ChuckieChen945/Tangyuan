@@ -9,7 +9,8 @@
     "post_install": [
         "gsudo chezmoi apply --source D:\\chezmoi --verbose --force --init",
         "gsudo chezmoi apply --source D:\\chezmoi\\scoop --destination D:\\scoop --verbose --force --init",
-        "gsudo chezmoi apply --source D:\\chezmoi\\etc --destination C:\\Windows\\System32\\drivers\\etc --verbose --force --init"
+        "gsudo chezmoi apply --source D:\\chezmoi\\etc --destination C:\\Windows\\System32\\drivers\\etc --verbose --force --init",
+        "gsudo chezmoi apply --source D:\\chezmoi\\Public --destination C:\\Users\\Public --verbose --force --init"
     ],
     "uninstaller": {
         "script": ["scoop uninstall main/chezmoi"]
