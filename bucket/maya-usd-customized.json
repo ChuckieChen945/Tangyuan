@@ -6,7 +6,7 @@
     "url": "https://github.com/Autodesk/maya-usd/releases/download/v0.32.0/MayaUSD_0.32.0_Maya2025.3_Windows.exe#/setup.zip",
     "hash": "8bea2c17e96cdc34c7fa846d70ac0c9f94e83dbeb79a9b47abea349db894d811",
     "depends": [
-        "ChuckieChen945_Chuckie_s/maya",
+        "ChuckieChen945_Chuckie_s/maya-np",
         "ChuckieChen945_Tangyuan/ps-sfta-nightly"
     ],
     "bin": [
@@ -16,7 +16,7 @@
         [
             "C:\\Program Files\\Autodesk\\MayaUSD\\Maya2025\\0.32.0_202505060957-eeb3aaa\\mayausd\\USD\\bin\\usdview.cmd",
             "usdview",
-            "D:\\scoop\\buckets\\Chuckie_s\\scripts\\maya_usd\\HelloWorld.usda"
+            "D:\\scoop\\buckets\\ChuckieChen945_Tangyuan\\scripts\\maya-usd-customized\\HelloWorld.usda"
         ]
     ],
     "env_set": {
@@ -29,12 +29,19 @@
         ]
     },
     "post_install": [
-        "& $(Join-Path \"$bucketsdir\\$bucket\" 'scripts\\maya_usd\\post_install.ps1')"
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "& $(Join-Path \"$bucketsdir\\$bucket\" 'scripts\\maya-usd-customized\\post_install.ps1')",
+        "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
+        "# add PYTHONPATH",
+        "$mayaUsdPath = 'C:\\Program Files\\Autodesk\\MayaUSD\\Maya2025\\0.32.0_202505060957-eeb3aaa\\mayausd\\USD\\lib\\python'",
+        "Add-Env -Variable 'PYTHONPATH' -Value $mayaUsdPath"
     ],
     "uninstaller": {
         "script": [
-            ". \"$bucketsdir\\Chuckie_s\\bin\\utils.ps1\"",
-            "Uninstall-MsiApp '{20E4D213-739D-43F2-AF1C-5F73ADE222B9}'"
+            ". \"$bucketsdir\\ChuckieChen945_Tangyuan\\bin\\utils.ps1\"",
+            "Uninstall-MsiApp '{20E4D213-739D-43F2-AF1C-5F73ADE222B9}'",
+            "$mayaUsdPath = 'C:\\Program Files\\Autodesk\\MayaUSD\\Maya2025\\0.32.0_202505060957-eeb3aaa\\mayausd\\USD\\lib\\python'",
+            "Remove-Env -Variable 'PYTHONPATH' -Value $mayaUsdPath"
         ]
     },
     "checkver": "github",
