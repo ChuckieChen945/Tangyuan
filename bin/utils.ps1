@@ -74,7 +74,9 @@ function Copy-DirItems {
         [string]$dirTag,
 
         [Parameter(Mandatory = $true)]
-        [string]$destinationDir
+        [string]$destinationDir,
+
+        [bool]$clean = $true
     )
 
     if (-not (Get-Command 'gsudo' -ErrorAction SilentlyContinue)) {
@@ -94,11 +96,12 @@ function Copy-DirItems {
         return
     }
 
-    # 确保目标目录存在
     if (-not (Test-Path $destinationDir)) {
         New-Item -Path $destinationDir -ItemType Directory -Force | Out-Null
     }
 
+
+    # 执行复制
     try {
 
         $copyCommand = "Copy-Item -Path `"$sourceDir`" -Destination `"$destinationDir`" -Recurse -Force"
@@ -106,16 +109,18 @@ function Copy-DirItems {
 
         Write-Host "`n✅ 已复制文件: $sourceDir → $destinationDir"
 
-        # 清理原目录内容
-        Get-ChildItem -Path $dir -Recurse -Force -ErrorAction SilentlyContinue |
-        Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
-
-        Write-Host "🧹 已清理原始目录内容: $dir"
+        # 清理目录内容
+        if ($clean) {
+            Get-ChildItem -Path $dir -Recurse -Force -ErrorAction SilentlyContinue |
+            Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
+            Write-Host "🧹 已清理安装目录内容: $dir"
+        }
     }
     catch {
-        Write-Error "操作失败: $_"
+        Write-Error "❌ 操作失败: $_"
     }
 }
+
 
 function Add-UserPath {
     param (
