@@ -6,7 +6,8 @@ $commonArgs = "--verbose --force --init"
 $tasks = @(
     @{ Source = "D:\chezmoi"; Destination = "C:\" },
     @{ Source = "D:\chezmoi\scoop"; Destination = "D:\scoop" },
-    @{ Source = "F:\eagle_librarys\Illusion.library\images\MCY6317GW5VTU.info"; Destination = (Join-Path (Split-Path (scoop which zbrush)) "ZBrushes") }
+    @{ Source = "F:\eagle_librarys\Illusion.library\images\MCY6317GW5VTU.info"; Destination = (Join-Path (Split-Path (scoop which zbrush)) "ZBrushes") },
+    @{ Source = "F:\eagle_librarys\Illusion.library\images\MD79GOXXJ69II.info"; Destination = "$env:USERPROFILE\Documents\houdini20.5\otls" }
 )
 
 # 执行循环
