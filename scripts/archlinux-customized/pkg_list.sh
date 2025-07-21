@@ -14,6 +14,9 @@ PACMAN=(
     git
     sudo
     docker
+    docker-buildx
+    docker-compose
+    exa
     neovim
     python
     screenfetch

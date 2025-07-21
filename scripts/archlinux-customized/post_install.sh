@@ -72,10 +72,19 @@ main() {
     source "$PKG_LIST"
 
     install_pacman_pkgs "${PACMAN[@]}"
-    chsh -s /usr/bin/zsh "$USER_NAME"
     install_aur_pkgs "${YAY[@]}"
 
+    # package settings
+    # zsh
+    chsh -s /usr/bin/zsh "$USER_NAME"
+    # docker
+    systemctl enable docker.socket
+    usermod -aG docker Chuckie
+    # 恢复docker数据
+    cp -r /mnt/d/archlinux/docker/ /var/lib/
+
     pacman -Syu --noconfirm
+
 
     echo "\n🎉 初始化完成！"
     echo "请注销 root，以新用户 '$username' 登录继续操作。"

@@ -11,12 +11,12 @@ readonly PKG_LIST="$SCRIPT_DIR/pkg_list.sh"
 
 source "$PKG_LIST"
 
-export http_proxy="http://127.0.0.1:10808"
-export https_proxy="http://127.0.0.1:10808"
-export all_proxy="http://127.0.0.1:10808"
-export HTTP_PROXY="http://127.0.0.1:10808"
-export HTTPS_PROXY="http://127.0.0.1:10808"
-export ALL_PROXY="http://127.0.0.1:10808"
+export http_proxy='http://127.0.0.1:10808'
+export https_proxy='http://127.0.0.1:10808'
+export all_proxy='http://127.0.0.1:10808'
+export HTTP_PROXY='http://127.0.0.1:10808'
+export HTTPS_PROXY='http://127.0.0.1:10808'
+export ALL_PROXY='http://127.0.0.1:10808'
 
 # --- 函数 ---
 
@@ -73,6 +73,9 @@ main() {
 
     download_pacman_pkgs
     download_aur_pkgs
+
+    # docker数据不能在NTFS上跑，只能每次重装系统前复制备份
+    cp -r /var/lib/docker/ /mnt/d/archlinux/
 
     echo "\n🎉 所有备份任务完成！"
 }
