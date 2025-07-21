@@ -18,10 +18,10 @@ PACMAN=(
     python
     screenfetch
     archlinuxcn-keyring # 导入 Arch Linux CN 的 GPG 密钥
+    yay # from archlinuxcn
+    xray # from archlinuxcn
 )
 
 # AUR (Arch User Repository) 包
 YAY=(
-    v2rayn-bin # v2rayN
-    yay-bin
 )

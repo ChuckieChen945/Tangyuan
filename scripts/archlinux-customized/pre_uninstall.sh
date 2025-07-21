@@ -56,11 +56,14 @@ download_aur_pkgs() {
     # 设置 yay 的缓存目录为我们的备份目录
     # -Swa: Sync, download-only, all (包括依赖)
     # if sudo -u "$SUDO_USER" yay -Swa --aur  "${pkgs[@]}"; then
-    if yay -S --downloadonly --noconfirm --needed "${YAY[@]}"; then
-        echo "✅ 所有 AUR 包下载成功。"
-    else
-        echo "🚨 部分 AUR 包下载失败。"
-        return 1
+
+    if [ "${#YAY[@]}" -gt 0 ]; then
+        if yay -S --downloadonly --noconfirm --needed "${YAY[@]}"; then
+            echo "✅ 所有 AUR 包下载成功。"
+        else
+            echo "🚨 部分 AUR 包下载失败。"
+            return 1
+        fi
     fi
 }
 
