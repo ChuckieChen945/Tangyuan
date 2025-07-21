@@ -5,7 +5,8 @@
     "license": "Freeware",
     "depends": [
         "ChuckieChen945_Tangyuan/microsoft-wsl-customized",
-        "ChuckieChen945_Tangyuan/wsldl-archlinux"
+        "ChuckieChen945_Tangyuan/wsldl-archlinux",
+        "ChuckieChen945_Tangyuan/chezmoi-customized"
     ],
     "architecture": {
         "64bit": {
@@ -21,7 +22,15 @@
     },
     "post_install": [
         "Remove-Item \"$persist_dir\\data\\Arch.exe\" -Force -ErrorAction SilentlyContinue",
-        "Remove-Item \"$dir\\archlinux.wsl\" -Force -ErrorAction SilentlyContinue"
+        "Remove-Item \"$dir\\archlinux.wsl\" -Force -ErrorAction SilentlyContinue",
+        "# init wsl",
+        "init_chezmoi",
+        "$post_install = '/mnt/d/scoop/buckets/ChuckieChen945_Tangyuan/scripts/archlinux-customized/post_install.sh'",
+        "wsl bash $post_install"
+    ],
+    "pre_uninstall": [
+        "$pre_uninstall = '/mnt/d/scoop/buckets/ChuckieChen945_Tangyuan/scripts/archlinux-customized/pre_uninstall.sh'",
+        "wsl bash $pre_uninstall"
     ],
     "uninstaller": {
         "script": ["Invoke-ExternalCommand Arch 'clean', '-y'"]

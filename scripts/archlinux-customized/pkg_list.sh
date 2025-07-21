@@ -1,5 +1,4 @@
 #!/bin/bash
-# 包列表
 
 # Pacman 官方源包
 PACMAN=(
@@ -18,9 +17,11 @@ PACMAN=(
     neovim
     python
     screenfetch
+    archlinuxcn-keyring # 导入 Arch Linux CN 的 GPG 密钥
 )
 
 # AUR (Arch User Repository) 包
 YAY=(
-    v2rayn-bin # v2rayN 在 AUR 中的包名通常是 v2rayn-bin 或类似名称
+    v2rayn-bin # v2rayN
+    yay-bin
 )
