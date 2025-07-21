@@ -9,8 +9,10 @@
     "installer": {
         "script": [
             "$extensions = @(",
-            "# FIXME:通过命令行安装extension-pack时会卡住",
+            "# FIXME:通过命令行安装extension-pack时会卡住,不安装整个包，只安装需要的扩展",
             "# 'ms-vscode-remote.vscode-remote-extensionpack',",
+            "'ms-vscode-remote.remote-containers',",
+            "'ms-vscode-remote.remote-wsl',",
             "'ms-ceintl.vscode-language-pack-zh-hans',",
             "'zhuangtongfa.material-theme',",
             "'shardulm94.trailing-spaces',",
@@ -50,8 +52,6 @@
             "'VisualStudioExptTeam.intellicode-api-usage-examples',",
             "'eamodio.gitlens',",
             "'formulahendry.code-runner',",
-            "'ms-vscode-remote.remote-containers',",
-            "'ms-vscode-remote.remote-wsl',",
             "'ecmel.vscode-html-css',",
             "'redhat.vscode-yaml',",
             "'streetsidesoftware.code-spell-checker',",
