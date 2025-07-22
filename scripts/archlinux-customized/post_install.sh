@@ -78,7 +78,7 @@ main() {
     # zsh
     chsh -s /usr/bin/zsh "$USER_NAME"
     # docker
-    systemctl enable docker.socket
+    systemctl enable docker.service
     usermod -aG docker Chuckie
     # 恢复docker数据
     cp -r /mnt/d/archlinux/docker/ /var/lib/
