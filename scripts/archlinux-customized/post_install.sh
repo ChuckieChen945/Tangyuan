@@ -81,6 +81,7 @@ main() {
     systemctl enable docker.service
     usermod -aG docker Chuckie
     # 恢复docker数据
+    echo "📂 开始恢复 Docker 数据..."
     cp -r /mnt/d/archlinux/docker/ /var/lib/
 
     pacman -Syu --noconfirm
