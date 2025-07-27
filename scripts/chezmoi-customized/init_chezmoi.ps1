@@ -14,8 +14,8 @@ $tasks = @(
     },
     ########################## wsl相关配置 ##########################
     @{
-        Source      = "D:\chezmoi\Windows\System32\drivers\etc\";
-        Destination = "\\wsl.localhost\Arch\etc";
+        Source      = "D:\chezmoi\Windows\System32\drivers\";
+        Destination = "\\wsl.localhost\Arch\\";
         ExtraArgs   = "--config D:\chezmoi\others\copy_mode.chezmoi.jsonc"
     },
     @{
