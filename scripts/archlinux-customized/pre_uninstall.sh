@@ -76,6 +76,7 @@ main() {
 
     # docker数据不能在NTFS上跑，只能每次重装系统前复制备份
     echo "📂 开始备份 Docker 数据..."
+    # TODO: 增量备份，加快速度
     cp -r /var/lib/docker/ /mnt/d/archlinux/
 
     echo "\n🎉 所有备份任务完成！"

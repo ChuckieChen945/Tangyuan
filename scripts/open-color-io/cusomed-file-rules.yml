@@ -1,0 +1,18 @@
+
+file_rules:
+  - !<Rule> {name: ColorSpaceNamePathSearch}
+  - !<Rule> {name: BaseColor, colorspace: color_picking, pattern: "*[cC]olor*", extension: "*"}
+  - !<Rule> {name: Emissive, colorspace: data, pattern: "*[eE]missive*", extension: "*"}
+  - !<Rule> {name: Height, colorspace: data, pattern: "*[hH]eight*", extension: "*"}
+  - !<Rule> {name: Metalness, colorspace: data, pattern: "*[mM]etalness*", extension: "*"}
+  - !<Rule> {name: Metallic, colorspace: data, pattern: "*[mM]etallic*", extension: "*"}
+  - !<Rule> {name: AO, colorspace: data, pattern: "*AO*", extension: "*"}
+  - !<Rule> {name: Scattering, colorspace: data, pattern: "*[sS]cattering*", extension: "*"}
+  - !<Rule> {name: Normal, colorspace: data, pattern: "*[nN]ormal*", extension: "*"}
+  - !<Rule> {name: Roughness, colorspace: data, pattern: "*[rR]oughness*", extension: "*"}
+  - !<Rule> {name: bmp, colorspace: color_picking, pattern: "*", extension: bmp}
+  - !<Rule> {name: jpg, colorspace: color_picking, pattern: "*", extension: jpg}
+  - !<Rule> {name: tif, colorspace: color_picking, pattern: "*", extension: tif}
+  - !<Rule> {name: hdr, colorspace: Linear Rec.709 (sRGB), pattern: "*", extension: hdr}
+  - !<Rule> {name: exr, colorspace: Linear Rec.709 (sRGB), pattern: "*", extension: exr}
+  - !<Rule> {name: Default, colorspace: ACES2065-1}
