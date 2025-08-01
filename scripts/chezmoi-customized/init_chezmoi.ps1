@@ -31,6 +31,10 @@ $tasks = @(
     @{
         Source      = "F:\eagle_librarys\Illusion.library\images\MD79GOXXJ69II.info";
         Destination = "$env:USERPROFILE\Documents\houdini20.5\otls"
+    },
+    @{
+        Source      = "F:\eagle_librarys\Illusion.library\images\MDR4DVA51K586.info";
+        Destination = "$env:USERPROFILE\Documents\Adobe\Adobe Substance 3D Painter\assets"
     }
 )
 
