@@ -7,18 +7,16 @@
         "64bit": {
             "url": [
                 "https://github.com/comfyanonymous/ComfyUI/releases/download/v0.3.49/ComfyUI_windows_portable_nvidia.7z",
-                "https://huggingface.co/Comfy-Org/stable-diffusion-v1-5-archive/resolve/main/v1-5-pruned-emaonly-fp16.safetensors"
+                "https://github.com/Comfy-Org/ComfyUI-Manager/archive/refs/heads/main.zip"
             ],
             "hash": [
                 "fc18ef8dc2cb24a29ff3d61f48cf3fde28a68b5a4da151bc313a2ce6cf0ca717"
             ]
         }
     },
-    "persist": "ComfyUI\\models",
+    "persist": ["ComfyUI\\models", "ComfyUI\\custom_nodes"],
     "extract_dir": ["ComfyUI_windows_portable", ""],
-    "post_install": [
-        "Move-Item -Path \"$dir\\v1-5-pruned-emaonly-fp16.safetensors\" -Destination \"$dir\\ComfyUI.exe\" -Force"
-    ],
+    "extract_to": ["", "ComfyUI\\custom_nodes"],
     "shortcuts": [
         ["run_nvidia_gpu.bat", "ComfyUI (NVIDIA GPU)"],
         ["run_cpu.bat", "ComfyUI (CPU)"],
@@ -27,5 +25,11 @@
             "ComfyUI (NVIDIA GPU Fast FP16 Accumulation)"
         ]
     ],
-    "checkver": "github"
+    "checkver": "github",
+    "autoupdate": {
+        "url": [
+            "https://github.com/comfyanonymous/ComfyUI/releases/download/v$version/ComfyUI_windows_portable_nvidia.7z",
+            "https://github.com/Comfy-Org/ComfyUI-Manager/archive/refs/heads/main.zip"
+        ]
+    }
 }
