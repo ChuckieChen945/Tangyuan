@@ -128,6 +128,7 @@ function Add-UserPath {
         [string]$PathToAdd
     )
 
+    # TODO: 这个函数好像将$pathToAdd加入到了系统 环境变量中
     Add-Env -Variable 'Path' -Value $PathToAdd
 }
 

@@ -1,0 +1,25 @@
+{
+    "##": [
+        "pip 编译C扩展时要用到Microsoft Visual C++ 14 Build Tools（不是runtime）"
+    ],
+    "version": "17",
+    "description": "用于安装 Microsoft C++ Build Tools",
+    "homepage": "https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/",
+    "license": "Unknow",
+    "url": "https://aka.ms/vs/17/release/vs_BuildTools.exe",
+    "hash": "5d363591aa59a4d1f04300d66e1d402bf009bfc4f7afd985c8aedcf0ffbc20f5",
+    "installer": {
+        "file": "vs_BuildTools.exe",
+        "args": ["--passive", "--norestart"]
+    },
+    "post_install": [
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "Add-UserPath 'C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.44.35207\\bin\\Hostx64\\x64'",
+        "# scoop 的 env_add_path 只能将 $dir中的目录加入path"
+    ],
+    "notes": [
+        "需手动添加：",
+        "使用C++的桌面开发 > MSVC v143 - VS 2022 C++ x64/x86生成工具(最新)",
+        "使用C++的桌面开发 > windows 11 sdk "
+    ]
+}
