@@ -33,10 +33,6 @@ $tasks = @(
         Destination = "$env:USERPROFILE\Documents\houdini20.5\otls"
     },
     @{
-        Source      = "F:\eagle_librarys\Illusion.library\images\MDR4DVA51K586.info";
-        Destination = "$env:USERPROFILE\Documents\Adobe\Adobe Substance 3D Painter\assets"
-    },
-    @{
         Source      = "F:\eagle_librarys\Illusion.library\images\MDWFI8KD2ZCRM.info";
         Destination = "$env:USERPROFILE\Documents\MarvelousDesigner\Assets\Materials\Fabric"
     }
