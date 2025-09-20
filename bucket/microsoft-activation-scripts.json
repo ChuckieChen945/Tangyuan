@@ -1,0 +1,22 @@
+{
+    "notes": ["https://massgrave.dev/genuine-installation-media"],
+    "version": "2025.09.12.b74d115",
+    "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
+    "homepage": "https://massgrave.dev/",
+    "license": {
+        "identifier": "GPL-3.0 license",
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/blob/master/LICENSE"
+    },
+    "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip",
+    "hash": "8133f98f995646d597a8ee2bcbae7edf5dd9761202b3bd7208c7611ccd4b342e",
+    "extract_dir": "Microsoft-Activation-Scripts-master/MAS/All-In-One-Version-KL",
+    "bin": ["MAS_AIO.cmd"],
+    "checkver": {
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/commits/master.atom",
+        "regex": "(?s)>(\\d+)-(\\d+)-(\\d+)T.*?/(?<sha>(?<short>[0-9a-f]{7})[0-9a-f]{33})",
+        "replace": "${1}.${2}.${3}.${short}"
+    },
+    "autoupdate": {
+        "url": "https://github.com/massgravel/Microsoft-Activation-Scripts/archive/refs/heads/master.zip"
+    }
+}
