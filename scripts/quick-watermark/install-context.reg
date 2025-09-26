@@ -1,0 +1,8 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\AddWatermark]
+@="add watermark"
+
+[HKEY_CLASSES_ROOT\*\shell\AddWatermark\command]
+@="\"{{$pwsh_root_placeholder}}\\pwsh.exe\" -NoProfile -NoExit -File \"{{$quickwatermark_root_placeholder}}\\add_watermark.ps1\" \"%*\""
+
