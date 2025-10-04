@@ -16,7 +16,8 @@
         "ChuckieChen945_Tangyuan/maya-medic",
         "ChuckieChen945_Tangyuan/maya-model-checker",
         "ChuckieChen945_Tangyuan/open-color-io-customized",
-        "ChuckieChen945_Tangyuan/vfx-software-prefs"
+        "ChuckieChen945_Tangyuan/vfx-software-prefs",
+        "ChuckieChen945_Tangyuan/maya-advanced-skeleton"
     ],
     "installer": {
         "script": [
