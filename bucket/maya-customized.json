@@ -22,8 +22,12 @@
     "installer": {
         "script": [
             "# 合并两个配置目录，避免混乱",
-            "Remove-Item -Path \"$env:USERPROFILE\\Documents\\maya\\2026\" -Recurse -Force",
-            "New-DirectoryJunction -source \"$env:USERPROFILE\\Documents\\maya\\2026\" -target \"$env:USERPROFILE\\Documents\\maya\\2025\""
+            "Remove-Item -Path \"$env:USERPROFILE\\Documents\\maya\\2026\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "$maya2025 = \"$env:USERPROFILE\\Documents\\maya\\2025\"",
+            "if (-Not (Test-Path $maya2025)) {",
+            "    New-Item -ItemType Directory -Path $maya2025",
+            "}",
+            "New-DirectoryJunction -source \"$env:USERPROFILE\\Documents\\maya\\2026\" -target $maya2025"
         ]
     }
 }

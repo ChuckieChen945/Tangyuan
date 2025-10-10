@@ -29,10 +29,6 @@ $tasks = @(
         Destination = (Join-Path (Split-Path (scoop which zbrush)) "ZBrushes")
     },
     @{
-        Source      = "F:\eagle_librarys\Illusion.library\images\MD79GOXXJ69II.info";
-        Destination = "$env:USERPROFILE\Documents\houdini20.5\otls"
-    },
-    @{
         Source      = "F:\eagle_librarys\Illusion.library\images\MDWFI8KD2ZCRM.info";
         Destination = "$env:USERPROFILE\Documents\MarvelousDesigner\Assets\Materials\Fabric"
     }
