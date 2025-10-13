@@ -192,3 +192,26 @@ function Remove-Env {
         Set-EnvVar -Name $VariableName -Value "$newValue" -Global $global
     }
 }
+
+function Stop-ProcessWithTimeout {
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ProcessName,
+
+        [int]$MaxWaitSeconds = 60
+    )
+
+    $waited = 0
+    while (Get-Process -Name $ProcessName -ErrorAction SilentlyContinue) {
+        Stop-Process -Name $ProcessName -Force -ErrorAction SilentlyContinue
+
+        if ($waited -ge $MaxWaitSeconds) {
+            Write-Warning "进程 '$ProcessName' 未能在 $MaxWaitSeconds 秒内停止，继续执行脚本"
+            break
+        }
+
+        Start-Sleep -Seconds 1
+        $waited++
+    }
+}
+
