@@ -52,6 +52,7 @@
             "'inferrinizzard.prettier-sql-vscode',",
             "'animallogic.vscode-usda-syntax',",
             "'saviof.mayacode',",
+            "'irongeek.vscode-env',",
             "############### others ################",
             "'esbenp.prettier-vscode',",
             "'buuug7.gbk2utf8',",
