@@ -9,5 +9,16 @@
         "ChuckieChen945_Chuckie_s/houdini20-np",
         "ChuckieChen945_Chuckie_s/houdini21-np",
         "ChuckieChen945_Tangyuan/houdini2chat"
-    ]
+    ],
+    "installer": {
+        "script": [
+            "# 合并两个配置目录，避免混乱",
+            "Remove-Item -Path \"$env:USERPROFILE\\Documents\\houdini21.0\" -Recurse -Force -ErrorAction SilentlyContinue",
+            "$houdini20 = \"$env:USERPROFILE\\Documents\\houdini20.5\"",
+            "if (-Not (Test-Path $houdini20)) {",
+            "    New-Item -ItemType Directory -Path $houdini20",
+            "}",
+            "New-DirectoryJunction -source \"$env:USERPROFILE\\Documents\\houdini21.0\" -target $houdini20"
+        ]
+    }
 }
