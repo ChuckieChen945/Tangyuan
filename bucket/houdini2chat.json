@@ -1,4 +1,5 @@
 {
+    "notes": "需设置 HOUDINI_OTLSCAN_PATH",
     "version": "0.1.0",
     "description": "enable Houdini Artists to chat instantly with any AI program about their Complex Houdini Scenes without describing them, and for free.",
     "homepage": "https://github.com/rendermagix/houdini2chat",
