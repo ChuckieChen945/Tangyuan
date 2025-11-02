@@ -26,6 +26,7 @@
             "'medo64.highlight-ip',",
             "'medo64.render-crlf',",
             "'jgclark.vscode-todo-highlight',",
+            "'bierner.markdown-mermaid',",
             "############### python ################",
             "'ms-python.python' # quick fix, Python commands, formatting, linting, code navigation, refactoring, variable explorer, test explorer,",
             "'ms-python.debugpy' # debug,",
