@@ -1,5 +1,10 @@
 {
-    "notes": "https://massgrave.dev/genuine-installation-media",
+    "notes": [
+        "https://www.microsoft.com/en-us/software-download/windows11",
+        "https://massgrave.dev/genuine-installation-media",
+        "https://uupdump.net/",
+        "https://next.itellyou.cn/"
+    ],
     "version": "2025.09.30.b064fc6",
     "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, KMS38, and Online KMS activation methods, along with advanced troubleshooting.",
     "homepage": "https://massgrave.dev/",
