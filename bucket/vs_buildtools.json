@@ -7,7 +7,7 @@
     "homepage": "https://visualstudio.microsoft.com/zh-hans/visual-cpp-build-tools/",
     "license": "Unknow",
     "url": "https://aka.ms/vs/17/release/vs_BuildTools.exe",
-    "hash": "5d363591aa59a4d1f04300d66e1d402bf009bfc4f7afd985c8aedcf0ffbc20f5",
+    "hash": "c7ed45fe45337b51c63cebbefd63010c2796cf05a617bd6e4ba46d57432e86e7",
     "installer": {
         "file": "vs_BuildTools.exe",
         "args": ["--passive", "--norestart"]
