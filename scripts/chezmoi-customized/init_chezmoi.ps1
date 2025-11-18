@@ -25,10 +25,6 @@ $tasks = @(
     },
     ########################## Eagle相关配置 ##########################
     @{
-        Source      = "F:\eagle_librarys\Illusion.library\images\MCY6317GW5VTU.info";
-        Destination = (Join-Path (Split-Path (scoop which zbrush)) "ZBrushes")
-    },
-    @{
         Source      = "F:\eagle_librarys\Illusion.library\images\MDWFI8KD2ZCRM.info";
         Destination = "$env:USERPROFILE\Documents\MarvelousDesigner\Assets\Materials\Fabric"
     }

@@ -11,16 +11,18 @@
     ],
     "installer": {
         "script": [
-            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\shelf_GoZBrush.mel\" \"C:\\Program Files\\Autodesk\\Maya2025\\scripts\\shelves\\shelf_GoZBrush.mel\" -ErrorAction Continue",
-            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\GoZScript.mel\" \"C:\\Program Files\\Autodesk\\Maya2025\\scripts\\startup\\GoZScript.mel\" -ErrorAction Continue",
-            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\Maya2025\\gozMaya.mll\" \"C:\\Program Files\\Autodesk\\Maya2025\\bin\\plug-ins\\gozMaya.mll\" -ErrorAction Continue"
+            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\shelf_GoZBrush.mel\" \"$env:USERPROFILE\\Documents\\maya\\2025\\zh_CN\\prefs\\shelves\\shelf_GoZBrush.mel\" -ErrorAction Continue",
+            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\GoZScript.mel\" \"$env:PROGRAMFILES\\Autodesk\\Maya2025\\scripts\\startup\\GoZScript.mel\" -ErrorAction Continue",
+            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\Maya2025\\gozMaya.mll\" \"$env:PROGRAMFILES\\Autodesk\\Maya2025\\bin\\plug-ins\\gozMaya.mll\" -ErrorAction Continue",
+            "Copy-Item \"C:\\Users\\Public\\Pixologic\\GoZApps\\Maya\\userSetup.mel\" \"$env:USERPROFILE\\Documents\\maya\\scripts\\userSetup.mel\" -ErrorAction Continue"
         ]
     },
     "uninstaller": {
         "script": [
-            "Remove-Item \"C:\\Program Files\\Autodesk\\Maya2025\\scripts\\shelves\\shelf_GoZBrush.mel\" -ErrorAction Continue",
-            "Remove-Item \"C:\\Program Files\\Autodesk\\Maya2025\\scripts\\startup\\GoZScript.mel\" -ErrorAction Continue",
-            "Remove-Item \"C:\\Program Files\\Autodesk\\Maya2025\\bin\\plug-ins\\gozMaya.mll\" -ErrorAction Continue"
+            "Remove-Item \"$env:USERPROFILE\\Documents\\maya\\2025\\zh_CN\\prefs\\shelves\\shelf_GoZBrush.mel\" -ErrorAction Continue",
+            "Remove-Item \"$env:PROGRAMFILES\\Autodesk\\Maya2025\\scripts\\startup\\GoZScript.mel\" -ErrorAction Continue",
+            "Remove-Item \"$env:PROGRAMFILES\\Autodesk\\Maya2025\\bin\\plug-ins\\gozMaya.mll\" -ErrorAction Continue",
+            "Remove-Item \"$env:USERPROFILE\\Documents\\maya\\scripts\\userSetup.mel\" -ErrorAction Continue"
         ]
     }
 }
