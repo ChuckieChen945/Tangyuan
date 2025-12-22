@@ -78,7 +78,7 @@ main() {
     # zsh
     chsh -s /usr/bin/zsh "$USER_NAME"
     # docker
-    systemctl enable docker.socket
+    systemctl enable docker.socket # 如果开机后 dockerd 未自动启动，运行 sudo systemctl start docker
     usermod -aG docker "$USER_NAME"
     # 恢复docker数据
     echo "📂 开始恢复 Docker 数据..."
