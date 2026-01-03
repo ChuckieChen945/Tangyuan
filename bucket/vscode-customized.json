@@ -32,7 +32,6 @@
             "'ms-python.debugpy' # debug,                   ",
             "'ms-python.vscode-pylance' # IntelliSense,     ",
             "'ms-python.vscode-python-envs' # venv,         ",
-            "'pamaron.pytest-runner' # pytest,              ",
             "#--------",
             "'charliermarsh.ruff',                          ",
             "'njpwerner.autodocstring',                     ",
