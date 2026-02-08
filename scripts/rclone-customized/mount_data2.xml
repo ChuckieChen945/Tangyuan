@@ -1,13 +1,13 @@
 <service>
-  <id>mount_data2</id>
-  <name>mount_data2</name>
-  <description>for BaiduSyncdisk</description>
-  <!-- 服务通常以不同的用户账户运行，其Path不同，所以要写绝对路径 -->
-  <executable>D:\scoop\apps\rclone\current\rclone.exe</executable>
-  <arguments>mount "E:\0_workspace" "E:\BaiduSyncdisk\data2_workspace" --vfs-cache-mode full</arguments>
-  <log mode="roll">
-    <level>error</level> <!-- 只记录错误，减少不必要的日志 -->
-    <sizeThreshold>10240</sizeThreshold> <!-- 单个日志文件大小限制，单位KB -->
-    <keepFiles>2</keepFiles> <!-- 最多保留2个历史日志文件 -->
-  </log>
+    <id>mount_data2</id>
+    <name>mount_data2</name>
+    <description>for BaiduSyncdisk</description>
+    <!-- 服务通常以不同的用户账户运行，其Path不同，所以要写绝对路径 -->
+    <executable>D:\scoop\apps\rclone\current\rclone.exe</executable>
+    <arguments>mount "E:\00_workspace" "E:\BaiduSyncdisk\data2_workspace" --vfs-cache-mode full</arguments>
+    <log mode="roll">
+        <level>error</level> <!-- 只记录错误，减少不必要的日志 -->
+        <sizeThreshold>10240</sizeThreshold> <!-- 单个日志文件大小限制，单位KB -->
+        <keepFiles>2</keepFiles> <!-- 最多保留2个历史日志文件 -->
+    </log>
 </service>
