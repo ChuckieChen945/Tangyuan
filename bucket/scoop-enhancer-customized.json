@@ -9,12 +9,13 @@
     "installer": {
         "script": [
             "# 设置一个计划任务，每小时自动更新 Scoop",
-            "$pwshPath = (scoop which pwsh)",
             "$scoopPath = (scoop which scoop)",
-            "$action = New-ScheduledTaskAction -Execute $pwshPath -Argument \"-NoProfile -NoLogo -WindowStyle Hidden -ExecutionPolicy Bypass -Command '& $scoopPath update scoop'\"",
+            "$pwshPath = (scoop which pwsh)",
+            "$argString = \"-NoProfile -NoLogo -WindowStyle Hidden -ExecutionPolicy Bypass -Command \"\"& `'$scoopPath`' update\"\"\"",
+            "$Action = New-ScheduledTaskAction -Execute $pwshPath -Argument $argString",
             "$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Hours 1)",
             "$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable",
-            "Register-ScheduledTask -TaskName 'ScoopAutoUpdate' -Action $action -Trigger $trigger -Description '每小时自动更新 Scoop' -Settings $settings -RunLevel Highest -Force",
+            "Register-ScheduledTask -TaskName 'ScoopAutoUpdate' -Action $Action -Trigger $trigger -Description '每小时自动更新 Scoop' -Settings $settings -RunLevel Highest -Force",
             "# This two can't be imported by .reg file, permission denied",
             "gsudo Add-MpPreference -ExclusionPath 'D:\\scoop'",
             "gsudo Add-MpPreference -ExclusionPath 'C:\\ProgramData\\scoop'"
