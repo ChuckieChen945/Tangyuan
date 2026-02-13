@@ -19,7 +19,7 @@
             "$Trigger2 = New-ScheduledTaskTrigger -Daily -At 2pm",
             "$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable",
             "",
-            "Register-ScheduledTask -Action $Action -Trigger $Trigger1, $Trigger2 -TaskName 'PostgreSQL_AutoBackup' -Description '每日两次定时备份 PostgreSQL 数据库' -RunLevel Highest -Force"
+            "Register-ScheduledTask -Action $Action -Trigger $Trigger1, $Trigger2 -TaskName 'PostgreSQL_AutoBackup' -Description '每日两次定时备份 PostgreSQL 数据库' -Settings $settings -RunLevel Highest -Force"
         ]
     },
     "uninstaller": {
