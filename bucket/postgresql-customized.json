@@ -12,7 +12,7 @@
         "script": [
             "$backupScriptDir = Join-Path $(persistdir 'postgresql' $global) 'data\\backup_db.ps1'",
             "$pwshPath = (scoop which pwsh)",
-            "$argString = \"-NoProfile -NoLogo -ExecutionPolicy Bypass -Command \"\"& `'$backupScriptDir`'\"\"\"",
+            "$argString = \"-NoProfile -NoLogo -WindowStyle Hidden -ExecutionPolicy Bypass -Command \"\"& `'$backupScriptDir`'\"\"\"",
             "$Action = New-ScheduledTaskAction -Execute $pwshPath -Argument $argString",
             "",
             "$Trigger1 = New-ScheduledTaskTrigger -Daily -At 2am",
