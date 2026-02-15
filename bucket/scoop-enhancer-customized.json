@@ -8,17 +8,7 @@
     "depends": ["main/gsudo", "main/pwsh"],
     "installer": {
         "script": [
-            "# 设置一个计划任务，每小时自动更新 Scoop",
-            "$scoopPath = (scoop which scoop)",
-            "$pwshPath = (scoop which pwsh)",
-            "$argString = \"-NoProfile -NoLogo -WindowStyle Hidden -ExecutionPolicy Bypass -Command \"\"& `'$scoopPath`' update\"\"\"",
-            "$Action = New-ScheduledTaskAction -Execute $pwshPath -Argument $argString",
-            "$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Hours 1)",
-            "$Settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable",
-            "Register-ScheduledTask -TaskName 'ScoopAutoUpdate' -Action $Action -Trigger $trigger -Description '每小时自动更新 Scoop' -Settings $settings -RunLevel Highest -Force",
-            "# This two can't be imported by .reg file, permission denied",
-            "gsudo Add-MpPreference -ExclusionPath 'D:\\scoop'",
-            "gsudo Add-MpPreference -ExclusionPath 'C:\\ProgramData\\scoop'"
+            "& $(Join-Path \"$bucketsdir\\$bucket\" \"scripts\\$app\\install_task.ps1\")"
         ]
     },
     "uninstaller": {
