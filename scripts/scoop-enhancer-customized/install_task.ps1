@@ -10,7 +10,7 @@ $logPath = "$env:TEMP\ScoopAutoTask.log"
 
 # 3. 构建核心命令（更新 Scoop -> 更新所有 App -> 清理旧版本 -> 记录日志）
 # 注意：这里加上了 scoop update *，如果你只想更新 scoop 本身，可以删掉中间那段
-$cmdToRun = "Write-Output `"--- `$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') ---`" >> `'$logPath`'; & `'$scoopPath`' update >> `'$logPath`' 2>&1; & `'$scoopPath`' update * >> `'$logPath`'; & `'$scoopPath`' cleanup * >> `'$logPath`' 2>&1"
+$cmdToRun = "Write-Output `"--- `$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') ---`" >> `'$logPath`'; & `'$scoopPath`' update * >> `'$logPath`'; & `'$scoopPath`' cleanup * >> `'$logPath`' 2>&1"
 
 # 4. 组装 pwsh.exe 的启动参数
 $argString = "-NoProfile -NoLogo -NonInteractive -ExecutionPolicy Bypass -Command ""$cmdToRun"""
