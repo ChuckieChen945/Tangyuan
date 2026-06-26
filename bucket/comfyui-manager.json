@@ -1,5 +1,5 @@
 {
-    "version": "2026.06.26.113939",
+    "version": "2026.06.26.172452",
     "notes": "comfyui manager第一次启动时会自动安装所需的python依赖",
     "description": "ComfyUI-Manager is an extension designed to enhance the usability of ComfyUI. It offers management functions to install, remove, disable, and enable various custom nodes of ComfyUI. Furthermore, this extension provides a hub feature and convenience functions to access a wide range of information within ComfyUI.",
     "homepage": "https://github.com/Comfy-Org/ComfyUI-Manager/",
@@ -7,7 +7,7 @@
     "architecture": {
         "64bit": {
             "url": "https://github.com/Comfy-Org/ComfyUI-Manager/archive/refs/heads/main.zip",
-            "hash": "725e392cea01aece9950421a86457199786b4bdb02cdb40ffa10cfb5b4a27060"
+            "hash": "ec34580bd5e42ca46842b358038bd36c6fb45133b8275a405e57496bcf3b0301"
         }
     },
     "depends": "ChuckieChen945_Tangyuan/comfyui",
