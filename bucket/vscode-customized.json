@@ -5,11 +5,13 @@
     "license": "Freeware",
     "url": "https://github.com/ChuckieChen945/vscode-markdown-one-dark/releases/download/v0.0.1/vscode-markdown-one-dark.vsix",
     "hash": "4e3d022efbc14a037f087b7ba25e59fc1c7a309a0f61c768304910962d9954fb",
-    "depends": ["extras/vscode"],
+    "depends": [
+        "extras/vscode"
+    ],
     "installer": {
         "script": [
             "$extensions = @(",
-            "############### vscode ################",
+            "################### vscode ####################",
             "'ms-vscode-remote.remote-containers',          ",
             "'ms-vscode-remote.remote-wsl',                 ",
             "'ms-azuretools.vscode-containers',             ",
@@ -19,7 +21,7 @@
             "'vscodevim.vim',                               ",
             "'pkief.material-icon-theme',                   ",
             "'EditorConfig.EditorConfig',                   ",
-            "############### display ################",
+            "################### display ###################",
             "'aaron-bond.better-comments',                  ",
             "'naumovs.color-highlight',                     ",
             "'kisstkondoros.vscode-gutter-preview',         ",
@@ -28,7 +30,7 @@
             "'jgclark.vscode-todo-highlight',               ",
             "'bierner.markdown-mermaid',                    ",
             "'awwsky.regionmarker',                         ",
-            "############### python ################",
+            "################## python #####################",
             "'ms-python.python' # quick fix, Python commands, formatting, linting, code navigation, refactoring, variable explorer, test explorer, ",
             "'ms-python.debugpy' # debug,                   ",
             "'ms-python.vscode-pylance' # IntelliSense,     ",
@@ -36,12 +38,12 @@
             "#--------",
             "'charliermarsh.ruff',                          ",
             "'njpwerner.autodocstring',                     ",
-            "############### other languages ################",
+            "############### other languages ###############",
             "'ms-vscode.powershell',                        ",
             "'tommasov.hosts',                              ",
             "'yzhang.markdown-all-in-one',                  ",
             "'davidanson.vscode-markdownlint',              ",
-            "'halfcrazy.pangu',                        ",
+            "'halfcrazy.pangu',                             ",
             "'mechatroner.rainbow-csv',                     ",
             "'ecmel.vscode-html-css',                       ",
             "'redhat.vscode-yaml',                          ",
@@ -55,12 +57,13 @@
             "'animallogic.vscode-usda-syntax',              ",
             "'saviof.mayacode',                             ",
             "'irongeek.vscode-env',                         ",
-            "############### others ################",
+            "'pinage404.nix-extension-pack'                 ",
+            "################### others ####################",
             "'esbenp.prettier-vscode',                      ",
             "'buuug7.gbk2utf8',                             ",
             "'chanhx.crabviz',                              ",
             "'odoo.odoo',                                   ",
-            "############### ai ################",
+            "###################### ai #####################",
             "'github.copilot',                              ",
             "'github.copilot-chat',                         ",
             "'GitHub.vscode-pull-request-github'            ",
@@ -82,7 +85,9 @@
         "reg import \"$(appdir extras/vscode $global)\\current\\uninstall-github-integration.reg\""
     ],
     "uninstaller": {
-        "script": ["scoop uninstall extras/vscode"]
+        "script": [
+            "scoop uninstall extras/vscode"
+        ]
     },
     "##": [
         "采用自定义extension package的效果不好，不再使用extension package",
