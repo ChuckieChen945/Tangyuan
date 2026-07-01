@@ -1,5 +1,5 @@
 {
-    "version": "2026.07.01.143117",
+    "version": "2026.07.01.182539",
     "description": "odoo 带自定义设置",
     "license": "Unknown",
     "depends": [
@@ -9,7 +9,7 @@
         "main/wkhtmltopdf"
     ],
     "url": "https://github.com/odoo/odoo/archive/refs/heads/19.0.zip",
-    "hash": "0dae29780ae7050112b1c1b7ca6d25e4cab054d01c69dc2bb99792fab1e6005f",
+    "hash": "8d5e870634793a7f6194aa89ec4c508756025054696b5d37269605d82dc6e1d2",
     "extract_dir": "odoo-19.0",
     "pre_install": [
         "New-Item -Path $dir -Name 'odoo.conf' -ItemType 'file'",
