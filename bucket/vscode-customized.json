@@ -5,9 +5,7 @@
     "license": "Freeware",
     "url": "https://github.com/ChuckieChen945/vscode-markdown-one-dark/releases/download/v0.0.1/vscode-markdown-one-dark.vsix",
     "hash": "4e3d022efbc14a037f087b7ba25e59fc1c7a309a0f61c768304910962d9954fb",
-    "depends": [
-        "extras/vscode"
-    ],
+    "depends": ["extras/vscode"],
     "installer": {
         "script": [
             "$extensions = @(",
@@ -63,6 +61,8 @@
             "'buuug7.gbk2utf8',                             ",
             "'chanhx.crabviz',                              ",
             "'odoo.odoo',                                   ",
+            "'theowenyoung.foam-lite-vscode',               ",
+            "'streetsidesoftware.code-spell-checker',       ",
             "###################### ai #####################",
             "'github.copilot',                              ",
             "'github.copilot-chat',                         ",
@@ -85,9 +85,7 @@
         "reg import \"$(appdir extras/vscode $global)\\current\\uninstall-github-integration.reg\""
     ],
     "uninstaller": {
-        "script": [
-            "scoop uninstall extras/vscode"
-        ]
+        "script": ["scoop uninstall extras/vscode"]
     },
     "##": [
         "采用自定义extension package的效果不好，不再使用extension package",

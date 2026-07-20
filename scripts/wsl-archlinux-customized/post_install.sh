@@ -8,12 +8,12 @@ readonly PKG_LIST="$SCRIPT_DIR/pkg_list.sh"
 
 readonly USER_NAME="Chuckie"
 
-export http_proxy='http://127.0.0.1:10808'
-export https_proxy='http://127.0.0.1:10808'
-export all_proxy='http://127.0.0.1:10808'
-export HTTP_PROXY='http://127.0.0.1:10808'
-export HTTPS_PROXY='http://127.0.0.1:10808'
-export ALL_PROXY='http://127.0.0.1:10808'
+# export http_proxy='http://127.0.0.1:10808'
+# export https_proxy='http://127.0.0.1:10808'
+# export all_proxy='http://127.0.0.1:10808'
+# export HTTP_PROXY='http://127.0.0.1:10808'
+# export HTTPS_PROXY='http://127.0.0.1:10808'
+# export ALL_PROXY='http://127.0.0.1:10808'
 
 install_aur_pkgs() {
     local pkgs=("$@")
@@ -60,8 +60,8 @@ setup_sudo() {
 # --- 主逻辑 ---
 main() {
 
-    create_user $USER_NAME
-    setup_sudo
+    # create_user $USER_NAME
+    # setup_sudo
 
 
     # keyring相关

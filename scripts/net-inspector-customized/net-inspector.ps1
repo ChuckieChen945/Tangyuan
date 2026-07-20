@@ -2,7 +2,7 @@
 
 # --- Network Diagnostic Tool v1.0 ---
 $ErrorActionPreference = "SilentlyContinue"
-$proxyUrl = "http://127.0.0.1:10808"
+# $proxyUrl = "http://127.0.0.1:10808"
 
 function Write-Header ([string]$Text) {
     Write-Host "`n" + ("=" * 60) -ForegroundColor Cyan
