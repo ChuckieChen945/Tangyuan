@@ -1,29 +1,28 @@
 {
-    "version": "2511.7.1",
+    "version": "2605.7.2",
     "description": "安装全新的NixOS-WSL",
     "homepage": "https://github.com/nix-community/NixOS-WSL",
     "license": "Freeware",
-    "depends": ["ChuckieChen945_Tangyuan/wsl-customized"],
+    "depends": "ChuckieChen945_Tangyuan/wsl-customized",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/nix-community/NixOS-WSL/releases/download/2511.7.1/nixos.wsl",
-            "hash": "d73e9e776c4332748ad25a71fbbdf6f8bc02b3ccf52b6edaaf21444c39f448b5"
+            "url": "https://github.com/nix-community/NixOS-WSL/releases/download/2605.7.2/nixos.wsl",
+            "hash": "e7180ad555fdcb8e1e057e2ef056de467603a5e502ff8531053738371be3f6b9"
         }
     },
-    "pre_install": ["ensure \"$persist_dir\\data\""],
+    "pre_install": "ensure \"$persist_dir\\data\"",
     "installer": {
         "script": [
             "info \"Installing WSL distribution...\"",
-            // TODO: 解决安装完后会直接进入的问题
             "wsl --install --from-file \"$dir\\nixos.wsl\" --name \"NixOS\" --location \"$persist_dir\\data\""
         ]
     },
-    "post_install": [
-        "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse"
+    "post_install": "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
+    "pre_uninstall": [
+        
     ],
-    "pre_uninstall": [],
     "uninstaller": {
-        "script": ["wsl --unregister NixOS"]
+        "script": "wsl --unregister NixOS"
     },
     "persist": "data",
     "checkver": "github",
