@@ -63,6 +63,7 @@
             "'odoo.odoo',                                   ",
             "'theowenyoung.foam-lite-vscode',               ",
             "'streetsidesoftware.code-spell-checker',       ",
+            "'gruntfuggly.todo-tree',                       ",
             "###################### ai #####################",
             "'github.copilot',                              ",
             "'github.copilot-chat',                         ",
