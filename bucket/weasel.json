@@ -8,9 +8,10 @@
     "pre_install": [
         "if(!(Test-Path \"$dir\\Rime\")) {New-Item \"$dir\\Rime\" -ItemType Directory | Out-Null} "
     ],
+    // TODO: 待完善
     "installer": {
         "script": [
-            "& \"$dir\\WeaselSetup.exe\" /i",
+            "& \"$dir\\WeaselSetup.exe\" /userdir:\"$dir\\Rime\"",
             "& \"$dir\\WeaselDeployer.exe\" /install",
             "& \"$dir\\WeaselServer.exe\""
         ]
