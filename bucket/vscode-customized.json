@@ -29,6 +29,7 @@
             "'jgclark.vscode-todo-highlight',                                         ",
             "'bierner.markdown-mermaid',                                              ",
             "'awwsky.regionmarker',                                                   ",
+            "'swaxx.custom-fold-markers',                                             ",
             "#endregion                                                               ",
             "#region python ##########################################################",
             "'ms-python.python' # quick fix, Python commands, formatting, linting, code navigation, refactoring, variable explorer, test explorer, ",
