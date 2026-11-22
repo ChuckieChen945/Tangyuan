@@ -1,7 +1,6 @@
 {
-    "##": "TODO: 利用 github actions 定制自己的 archlinux wsl 镜像，定期更新,而不是通过 chezmoi 定制",
     "version": "2026.01.08.213101",
-    "description": "安装archlinux",
+    "description": "安装 archlinux-wsl",
     "homepage": "https://gitlab.archlinux.org/archlinux/archlinux-wsl",
     "license": "Freeware",
     "depends": ["ChuckieChen945_Tangyuan/wsl-customized", "main/chezmoi"],
@@ -18,15 +17,7 @@
         ]
     },
     "post_install": [
-        "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
-        "# init wsl",
-        "# init_client",
-        "# $post_install = '/mnt/d/scoop/buckets/ChuckieChen945_Tangyuan/scripts/wsl-archlinux-customized/post_install.sh'",
-        "# wsl bash $post_install"
-    ],
-    "pre_uninstall": [
-        "# $pre_uninstall = '/mnt/d/scoop/buckets/ChuckieChen945_Tangyuan/scripts/wsl-archlinux-customized/pre_uninstall.sh'",
-        "# wsl bash $pre_uninstall"
+        "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse"
     ],
     "uninstaller": {
         "script": ["wsl --unregister Arch"]

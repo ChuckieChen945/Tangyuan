@@ -1,6 +1,6 @@
 {
     "version": "2605.7.2",
-    "description": "安装全新的NixOS-WSL",
+    "description": "安装全新的 NixOS-WSL",
     "homepage": "https://github.com/nix-community/NixOS-WSL",
     "license": "Freeware",
     "depends": "ChuckieChen945_Tangyuan/wsl-customized",

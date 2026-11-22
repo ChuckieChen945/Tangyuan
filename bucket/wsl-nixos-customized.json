@@ -22,9 +22,6 @@
         "# // TODO: wsl.exe --manage <DistributionName> --set-sparse true --allow-unsafe",
         "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse"
     ],
-    "pre_uninstall": [
-        
-    ],
     "uninstaller": {
         "script": "wsl --unregister NixOS"
     },
