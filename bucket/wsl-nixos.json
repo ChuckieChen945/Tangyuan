@@ -17,7 +17,12 @@
             "wsl --install --from-file \"$dir\\nixos.wsl\" --name \"NixOS\" --location \"$persist_dir\\data\" --no-launch"
         ]
     },
-    "post_install": "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
+    "post_install": [
+        "# TODO: 跟踪一下set-sparse这个功能有没有被设成默认值了",
+        "# TODO: 下面这个命令会报错：无法完成该操作，因为 VHD 当前正在使用中。强制 WSL 停止使用: wsl.exe --shutdown",
+        "# wsl.exe --manage Arch --set-sparse true --allow-unsafe",
+        "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse"
+    ],
     "uninstaller": {
         "script": "wsl --unregister NixOS"
     },
