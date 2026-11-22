@@ -13,7 +13,7 @@
     "installer": {
         "script": [
             "info \"Installing WSL distribution...\"",
-            "wsl --install --from-file \"$dir\\archlinux.wsl\" --name \"Arch\" --location \"$persist_dir\\data\""
+            "wsl --install --from-file \"$dir\\archlinux.wsl\" --name \"Arch\" --location \"$persist_dir\\data\" --no-launch"
         ]
     },
     "post_install": [

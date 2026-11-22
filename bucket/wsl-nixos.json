@@ -14,7 +14,7 @@
     "installer": {
         "script": [
             "info \"Installing WSL distribution...\"",
-            "wsl --install --from-file \"$dir\\nixos.wsl\" --name \"NixOS\" --location \"$persist_dir\\data\""
+            "wsl --install --from-file \"$dir\\nixos.wsl\" --name \"NixOS\" --location \"$persist_dir\\data\" --no-launch"
         ]
     },
     "post_install": "Get-ChildItem -Path $dir -Recurse | Remove-Item -Force -ErrorAction SilentlyContinue -Recurse",
