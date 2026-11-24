@@ -1,4 +1,5 @@
 {
+    "##": "TODO: 安装后好像不生效",
     "version": "0.71",
     "description": "Ext4 file system driver for Windows",
     "homepage": "https://github.com/bobranten/Ext4Fsd",
